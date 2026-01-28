@@ -9,14 +9,7 @@
 # Ir al directorio donde se encuentra el script
 cd "$(dirname "$0")"
 
-if [[ $EUID -ne 0 ]]; then
-   echo "--------------------------------------------------------"
-   echo "ERROR: Por favor, ejecuta este script con privilegios."
-   echo "Copia y pega esto en tu terminal:"
-   echo "sudo sh revert.command"
-   echo "--------------------------------------------------------"
-   exit 1
-fi
+# Nota: Este script ya no requiere privilegios de administrador.
 
 echo "--- Restaurando configuración original de macOS ---"
 
@@ -36,16 +29,16 @@ defaults write .GlobalPreferences com.apple.mouse.scaling 1.5
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# 3. RESTAURAR ENERGÍA
-echo "[3/4] Restaurando perfiles de energía..."
-pmset -a disablesleep 0
-pmset -a proximitywake 1
-pmset -a tcpkeepalive 1
-pmset -a powernap 1
+# 3. RESTAURAR ENERGÍA (Requiere sudo, omitido)
+# echo "[3/4] Restaurando perfiles de energía..."
+# pmset -a disablesleep 0
+# pmset -a proximitywake 1
+# pmset -a tcpkeepalive 1
+# pmset -a powernap 1
 
 # 4. RESTAURAR RED Y SISTEMA
 echo "[4/4] Restaurando red y Dock..."
-sysctl -w net.inet.tcp.delayed_ack=3
+# sysctl -w net.inet.tcp.delayed_ack=3
 dscacheutil -flushcache
 killall -HUP mDNSResponder
 killall Dock
