@@ -10,3 +10,9 @@ Si los archivos fueron descargados o movidos desde Windows, macOS los marca como
 bash
 
 xattr -dr com.apple.quarantine ~/Desktop/"Nexo-Dynamic-macOS-main"
+
+
+
+
+VIDEO TUTORIAL!
+https://www.youtube.com/watch?v=TH_SX_DvyX4
