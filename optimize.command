@@ -9,15 +9,8 @@
 # Ir al directorio donde se encuentra el script
 cd "$(dirname "$0")"
 
-# Ensure the script is run as root for certain commands
-if [[ $EUID -ne 0 ]]; then
-   echo "--------------------------------------------------------"
-   echo "ERROR: Por favor, ejecuta este script con privilegios."
-   echo "Copia y pega esto en tu terminal:"
-   echo "sudo sh optimize.command"
-   echo "--------------------------------------------------------"
-   exit 1
-fi
+# Nota: Este script ya no requiere privilegios de administrador.
+# Se han omitido las optimizaciones de sistema para facilitar su ejecución.
 
 echo "--- Iniciando optimización de Nexo Dynamic para macOS ---"
 
@@ -41,26 +34,26 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # 3. OPTIMIZACIÓN DE ENERGÍA Y RENDIMIENTO
 echo "[3/5] Ajustando perfiles de energía para máximo rendimiento..."
-# Prevenir que el sistema entre en reposo durante el uso
-pmset -a disablesleep 1
-# Desactivar Wake on LAN y servicios que despiertan el sistema innecesariamente
-pmset -a proximitywake 0
-pmset -a tcpkeepalive 0
-# Desactivar Power Nap
-pmset -a powernap 0
+# Prevenir que el sistema entre en reposo durante el uso (Requiere sudo, omitido)
+# pmset -a disablesleep 1
+# Desactivar Wake on LAN y servicios que despiertan el sistema innecesariamente (Requiere sudo, omitido)
+# pmset -a proximitywake 0
+# pmset -a tcpkeepalive 0
+# Desactivar Power Nap (Requiere sudo, omitido)
+# pmset -a powernap 0
 
 # 4. OPTIMIZACIÓN DE RED Y SISTEMA
 echo "[4/5] Optimizando red y latencia..."
-# Reducir el delay de ACK para mejorar respuesta en juegos online
-sysctl -w net.inet.tcp.delayed_ack=0
+# Reducir el delay de ACK para mejorar respuesta en juegos online (Requiere sudo, omitido)
+# sysctl -w net.inet.tcp.delayed_ack=0
 # Limpiar caché de DNS
 dscacheutil -flushcache
 killall -HUP mDNSResponder
 
 # 5. LIMPIEZA DE MEMORIA Y CACHÉ
 echo "[5/5] Realizando limpieza de sistema..."
-# Liberar memoria RAM inactiva
-purge
+# Liberar memoria RAM inactiva (Requiere sudo, omitido)
+# purge
 # Reiniciar el Dock para aplicar cambios visuales
 killall Dock
 
