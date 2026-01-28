@@ -6,9 +6,16 @@
 # Description: Optimiza macOS para juegos, reduce el retraso y mejora el rendimiento.
 # ==============================================================================
 
+# Ir al directorio donde se encuentra el script
+cd "$(dirname "$0")"
+
 # Ensure the script is run as root for certain commands
 if [[ $EUID -ne 0 ]]; then
-   echo "Por favor, ejecuta este script con sudo (ej: sudo sh optimize.sh)"
+   echo "--------------------------------------------------------"
+   echo "ERROR: Por favor, ejecuta este script con privilegios."
+   echo "Copia y pega esto en tu terminal:"
+   echo "sudo sh optimize.command"
+   echo "--------------------------------------------------------"
    exit 1
 fi
 

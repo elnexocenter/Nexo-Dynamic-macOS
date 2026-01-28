@@ -6,8 +6,15 @@
 # Descripción: Restaura los valores por defecto de macOS tras la optimización.
 # ==============================================================================
 
+# Ir al directorio donde se encuentra el script
+cd "$(dirname "$0")"
+
 if [[ $EUID -ne 0 ]]; then
-   echo "Por favor, ejecuta este script con sudo (ej: sudo sh revert.sh)"
+   echo "--------------------------------------------------------"
+   echo "ERROR: Por favor, ejecuta este script con privilegios."
+   echo "Copia y pega esto en tu terminal:"
+   echo "sudo sh revert.command"
+   echo "--------------------------------------------------------"
    exit 1
 fi
 

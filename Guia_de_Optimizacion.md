@@ -34,15 +34,18 @@ La optimización se divide en 5 pilares fundamentales para mejorar la experienci
 ## 🛠 Cómo usar los scripts
 
 ### Optimizando el sistema:
-1. Abre la **Terminal**.
-2. Ve a la carpeta donde están los archivos.
-3. Ejecuta: `sudo sh optimize.sh`
-4. Introduce tu contraseña (no se verá mientras escribes).
-5. ¡Listo! Se recomienda reiniciar la sesión para que los cambios de ratón se apliquen al 100%.
+1. Haz **doble clic** en `optimize.command`.
+2. Si macOS te indica que no puede abrirse, haz clic derecho y selecciona **Abrir**.
+3. Se abrirá la Terminal. Introduce tu contraseña (no se verá mientras escribes).
+4. ¡Listo! Se recomienda reiniciar la sesión para que los cambios de ratón se apliquen al 100%.
+
+> [!TIP]
+> Si recibes un error de "Permiso denegado", abre la Terminal y escribe:
+> `chmod +x *.command`
 
 ### Revirtiendo los cambios:
-Si deseas volver a la configuración original de macOS, simplemente ejecuta:
-`sudo sh revert.sh`
+Si deseas volver a la configuración original de macOS, simplemente haz doble clic en:
+`revert.command`
 
 ---
 
