@@ -36,7 +36,7 @@ La optimización se divide en 5 pilares fundamentales para mejorar la experienci
 ### Optimizando el sistema:
 1. Haz **doble clic** en `optimize.command`.
 2. Si macOS te indica que no puede abrirse, haz clic derecho y selecciona **Abrir**.
-3. Se abrirá la Terminal. Introduce tu contraseña (no se verá mientras escribes).
+3. Se abrirá la Terminal y ejecutará las optimizaciones automáticamente.
 4. ¡Listo! Se recomienda reiniciar la sesión para que los cambios de ratón se apliquen al 100%.
 
 > [!TIP]
